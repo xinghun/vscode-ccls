@@ -10,7 +10,7 @@ import {
   TreeItemCollapsibleState,
   Uri
 } from 'vscode';
-import { Disposable, LanguageClient } from 'vscode-languageclient/lib/main';
+import { Disposable, LanguageClient } from 'vscode-languageclient/lib/node/main';
 import { IHierarchyNode } from '../types';
 import { disposeAll, setContext } from '../utils';
 
@@ -82,9 +82,9 @@ export abstract class Hierarchy<T extends IHierarchyNode> implements TreeDataPro
 
   protected abstract onTreeItem(ti: TreeItem, element: T): void;
 
-  protected abstract async onReveal(uri: Uri, position: Position): Promise<T>;
+  protected abstract onReveal(uri: Uri, position: Position): Promise<T>;
 
-  protected abstract async onGetChildren(element: T): Promise<IHierarchyNode[]>;
+  protected abstract onGetChildren(element: T): Promise<IHierarchyNode[]>;
 
   private async reveal(editor: TextEditor) {
     setContext(this.contextValue, true);
