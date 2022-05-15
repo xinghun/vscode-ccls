@@ -1,13 +1,13 @@
 {
-  "name": "ccls",
+  "name": "ccls-plus",
   "description": "C/C++/ObjC language server supporting cross references, hierarchies, completion and semantic highlight",
-  "author": "ccls-project",
+  "author": "wallenwang",
   "license": "MIT",
-  "version": "0.1.29",
-  "publisher": "ccls-project",
+  "version": "0.1.30",
+  "publisher": "wallenwang",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MaskRay/vscode-ccls"
+    "url": "https://github.com/xinghun/vscode-ccls"
   },
   "engines": {
     "vscode": "^1.52.0"
