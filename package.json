@@ -3,7 +3,7 @@
   "description": "C/C++/ObjC language server supporting cross references, hierarchies, completion and semantic highlight",
   "author": "wallenwang",
   "license": "MIT",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "publisher": "wallenwang",
   "repository": {
     "type": "git",
@@ -653,7 +653,7 @@
           "default": 500,
           "description": "If a tree view entry is double-clicked within this timeout value, vscode will navigate to the entry."
         },
-        "ccls.treeViews.singleClickToNavigate": {
+        "ccls.treeViews.navigateBySingleClick": {
           "type": "boolean",
           "default": false,
           "description": "If true, when a parent entry in the tree view (call/inheritance/member hiearchy) is single clicked, vscode will navigate to the entry, otherwise use double click to navigate. Child entries always use single click to navigate."

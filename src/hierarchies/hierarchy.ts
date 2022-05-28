@@ -45,8 +45,8 @@ export abstract class Hierarchy<T extends IHierarchyNode> implements TreeDataPro
 
     this.treeItemCommand = 'ccls.hackGotoForTreeView';
     const config = workspace.getConfiguration('ccls');
-    const singleClickToNavigate = config.get('treeViews.singleClickToNavigate');
-    if (singleClickToNavigate) {
+    const navigateBySingleClick = config.get('treeViews.navigateBySingleClick');
+    if (navigateBySingleClick) {
       this.treeItemCommand = 'ccls.gotoForTreeView';
     }
   }
