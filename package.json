@@ -277,6 +277,11 @@
           "default": false,
           "description": "If false, store cache files as $directory/@a@b/c.cc.blob\n\nIf true, $directory/a/b/c.cc.blob."
         },
+        "ccls.cache.fullLoadOnInitialize": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, when handling an initialize request from the client, full load the cache before starting the index process. Note: The expired caches are also loaded. So it may be inaccurate until the index process is actually complete. The main purpose of turning this option on is to start working quickly with a less accurate (but mostly accurate) cache without waiting for the slow index process to complete. Official ccks does not support this option, use https://github.com/xinghun/ccls to support this option"
+        },
         "ccls.highlight.function.face": {
           "type": "array",
           "default": []
