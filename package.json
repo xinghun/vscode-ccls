@@ -3,7 +3,7 @@
   "description": "C/C++/ObjC language server supporting cross references, hierarchies, completion and semantic highlight",
   "author": "wallenwang",
   "license": "MIT",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "publisher": "wallenwang",
   "repository": {
     "type": "git",
