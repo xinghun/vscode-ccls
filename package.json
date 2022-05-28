@@ -653,6 +653,11 @@
           "default": 500,
           "description": "If a tree view entry is double-clicked within this timeout value, vscode will navigate to the entry."
         },
+        "ccls.treeViews.singleClickToNavigate": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, when a parent entry in the tree view (call/inheritance/member hiearchy) is single clicked, vscode will navigate to the entry, otherwise use double click to navigate. Child entries always use single click to navigate."
+        },
         "ccls.theme.light.skippedRange.textColor": {
           "type": "string",
           "default": "rgb(100, 100, 100)",

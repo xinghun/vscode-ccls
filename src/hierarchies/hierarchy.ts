@@ -8,7 +8,8 @@ import {
   TreeDataProvider,
   TreeItem,
   TreeItemCollapsibleState,
-  Uri
+  Uri,
+  workspace
 } from 'vscode';
 import { Disposable, LanguageClient } from 'vscode-languageclient/lib/node/main';
 import { IHierarchyNode } from '../types';
@@ -21,6 +22,7 @@ function nodeIsIncomplete(node: IHierarchyNode) {
 export abstract class Hierarchy<T extends IHierarchyNode> implements TreeDataProvider<IHierarchyNode>, Disposable {
   protected abstract contextValue: string;
   protected _dispose: Disposable[] = [];
+  protected treeItemCommand: string;
 
   protected readonly onDidChangeEmitter: EventEmitter<IHierarchyNode | null> = new EventEmitter<IHierarchyNode | null>();
   // tslint:disable-next-line:member-ordering
@@ -40,6 +42,13 @@ export abstract class Hierarchy<T extends IHierarchyNode> implements TreeDataPro
     this._dispose.push(commands.registerCommand(
       closeCmdName, this.close, this
     ));
+
+    this.treeItemCommand = 'ccls.hackGotoForTreeView';
+    const config = workspace.getConfiguration('ccls');
+    const singleClickToNavigate = config.get('treeViews.singleClickToNavigate');
+    if (singleClickToNavigate) {
+      this.treeItemCommand = 'ccls.gotoForTreeView';
+    }
   }
 
   public dispose() {
@@ -51,7 +60,7 @@ export abstract class Hierarchy<T extends IHierarchyNode> implements TreeDataPro
     ti.contextValue = 'cclsGoto';
     ti.command = {
       arguments: [element, element.numChildren > 0],
-      command: 'ccls.hackGotoForTreeView',
+      command: this.treeItemCommand,
       title: 'Goto',
     };
     if (element.numChildren > 0) {
