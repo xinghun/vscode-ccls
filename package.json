@@ -3,7 +3,7 @@
   "description": "C/C++/ObjC language server supporting cross references, hierarchies, completion and semantic highlight",
   "author": "wallenwang",
   "license": "MIT",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "publisher": "wallenwang",
   "repository": {
     "type": "git",
@@ -643,6 +643,16 @@
           "default": 15,
           "description": "Number of lines of the initializer / macro definition showed in hover."
         },
+        "ccls.codeLens.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Specifies whether the references CodeLens should be shown."
+        },
+        "ccls.codeLens.maxFileLines": {
+          "type": "integer",
+          "default": -1,
+          "description": "Disable references CodeLens in files with more lines than this setting. Default -1 means never disable."
+        },
         "ccls.codeLens.renderInline": {
           "type": "boolean",
           "default": false,
@@ -700,11 +710,6 @@
           ],
           "default": null,
           "description": "The maximum number of global search (ie, Ctrl+P + #foo) search results to report. For small search strings on large projects there can be a massive number of results (ie, over 1,000,000) so this limit is important to avoid extremely long delays. null means use the default value provided by the ccls language server."
-        },
-        "ccls.codeLens.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Specifies whether the references CodeLens should be shown."
         },
         "ccls.statusUpdateInterval": {
           "type": "integer",

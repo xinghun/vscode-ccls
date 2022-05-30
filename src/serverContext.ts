@@ -158,6 +158,7 @@ function getClientConfig(wsRoot: string): ClientConfig {
   const configBlacklist = new Set([
     'codeLens.enabled',
     'codeLens.renderInline',
+    'codeLens.maxFileLines',
     'highlight',
     'misc.showInactiveRegions',
     'theme',
@@ -347,6 +348,9 @@ export class ServerContext implements Disposable {
     const config = workspace.getConfiguration('ccls');
     const enableCodeLens = config.get('codeLens.enabled');
     if (!enableCodeLens)
+      return [];
+    const maxFileLines = config.get('codeLens.maxFileLines', -1);
+    if (maxFileLines !== -1 && document.lineCount > maxFileLines)
       return [];
     const enableInlineCodeLens = config.get('codeLens.renderInline', false);
     if (!enableInlineCodeLens) {
