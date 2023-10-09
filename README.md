@@ -8,6 +8,9 @@ This is the Visual Studio Code extension for [ccls](https://github.com/MaskRay/c
 
 ## Release Notes
 
+### 0.1.34
+* add: ccls.callHierarchy and ccls.memberHierarchy support C and C++ source files
+
 ### 0.1.33
 * add: New configuration `ccls.codeLens.maxFileLines` :
     * Enabling codelens in very large files can cause the editor to be very slow, use this option to limit the maximum number of lines in a file with references CodeLens enabled.

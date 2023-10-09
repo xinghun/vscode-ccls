@@ -3,7 +3,7 @@
   "description": "C/C++/ObjC language server supporting cross references, hierarchies, completion and semantic highlight",
   "author": "wallenwang",
   "license": "MIT",
-  "version": "0.1.33",
+  "version": "0.1.34",
   "publisher": "wallenwang",
   "repository": {
     "type": "git",
@@ -80,12 +80,12 @@
         },
         {
           "command": "ccls.callHierarchy",
-          "when": "resourceLangId == cpp",
+          "when": "resourceLangId == cpp || resourceLangId == c",
           "group": "navigation@1.32"
         },
         {
           "command": "ccls.memberHierarchy",
-          "when": "resourceLangId == cpp",
+          "when": "resourceLangId == cpp || resourceLangId == c",
           "group": "navigation@1.32"
         },
         {
