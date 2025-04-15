@@ -37,4 +37,5 @@ See:
 
 * [ccls/wiki/Home](https://github.com/MaskRay/ccls/wiki/Home)
 * [ccls/wiki/Visual Studio Code](https://github.com/MaskRay/ccls/wiki/Visual-Studio-Code)
+* [enable SemanticTokens Rainbow](doc/enable-rainbow-colors.md)
 * [ccls of wallenwang's fork](https://github.com/xinghun/ccls)
